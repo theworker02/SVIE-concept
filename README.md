@@ -35,6 +35,17 @@
   <a href="brand/README.md">Brand</a>
 </p>
 
+<p align="center">
+  <a href="docs/media/svie-ui-tour.gif"><img src="docs/media/svie-ui-tour.gif" alt="SVIE portal UI tour" width="720" /></a>
+</p>
+
+<p align="center">
+  <img src="docs/media/svie-ui-home.png" alt="Home" width="280" />
+  <img src="docs/media/svie-ui-demo.png" alt="Live demo" width="280" />
+  <img src="docs/media/svie-ui-hmi.png" alt="AETHER-OS HMI" width="280" />
+  <img src="docs/media/svie-ui-acquisition.png" alt="Acquisition desk" width="280" />
+</p>
+
 ---
 
 ## What this is
