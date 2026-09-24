@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="SVIE">
+  <title>SVIE  Supercritical Vapor-Injection Engine</title>
+  <rect width="512" height="512" fill="#12151A"/>
+  <rect x="48" y="48" width="416" height="416" fill="none" stroke="#3A4554" stroke-width="2"/>
+  <!-- Amber vapor bar -->
+  <rect x="96" y="248" width="320" height="6" fill="#D4A017"/>
+  <!-- Stylized V vapor path -->
+  <path d="M176 168 L256 320 L336 168" fill="none" stroke="#E8ECF1" stroke-width="28" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path d="M176 168 L256 320 L336 168" fill="none" stroke="#D4A017" stroke-width="6" stroke-linecap="square" opacity="0.9"/>
+  <!-- Wordmark -->
+  <text x="256" y="400" text-anchor="middle" font-family="IBM Plex Mono, Consolas, monospace" font-size="56" font-weight="600" letter-spacing="18" fill="#E8ECF1">SVIE</text>
+  <text x="256" y="438" text-anchor="middle" font-family="IBM Plex Mono, Consolas, monospace" font-size="14" letter-spacing="6" fill="#8B95A5">POWERTRAIN IP</text>
+</svg>

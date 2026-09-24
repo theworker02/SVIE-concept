@@ -1,0 +1,48 @@
+# SVIE V8 5.2 L — Baseline Engine Operating Conditions
+# Source of truth for WOT thermo models (8500 RPM full load)
+
+meta:
+  id: svie_v8_52L
+  name: SVIE-V8 Supercritical Flash Platform
+  version: "0.1.0"
+  status: concept-engineering-baseline
+  notes: >
+    Baseline parameters for thermodynamic and fluid-dynamics requirements
+    at 8500 RPM wide-open throttle (WOT).
+
+geometry:
+  displacement_m3: 0.005204   # 5.204 L
+  cylinders: 8
+  banks: 2
+  stroke_cycle: 4             # 4-stroke
+
+operating_point_wot:
+  rpm: 8500
+  target_brake_power_kw: 522   # ≈ 700 hp
+  volumetric_efficiency: 1.05  # 105% intake wave tuning
+  afr: 16.2                    # moderately lean gaseous homogeneous mix
+  air_density_kg_m3: 1.184     # sea-level ISA-ish
+
+fuel:
+  type: gasoline
+  lhv_kj_kg: 44000             # 44.0 MJ/kg
+  density_liquid_kg_L: 0.745   # for liquid-equivalent volume flow reporting
+
+thermal_breakdown_fraction:
+  brake_bte: 0.42              # shaft power share of fuel chemical input
+  coolant: 0.28
+  exhaust: 0.30
+
+# Published golden targets (engineering blueprint) — used by pytest
+golden:
+  cycles_per_s: 70.83
+  v_dot_air_m3_s: 0.387
+  m_dot_air_kg_s: 0.4582
+  m_dot_fuel_g_s: 28.28
+  m_dot_fuel_kg_h: 101.8
+  liquid_equiv_L_h: 137.6
+  mg_per_stroke: 49.9
+  e_in_kw: 1244.3
+  brake_power_kw: 522.6
+  coolant_kw: 348.4
+  exhaust_kw: 373.3

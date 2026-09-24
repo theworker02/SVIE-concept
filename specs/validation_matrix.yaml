@@ -1,0 +1,29 @@
+# Validation matrix SoT
+
+meta:
+  id: validation_matrix
+  name: SVIE Software Validation Matrix
+  version: "1.4.0"
+
+in_repo:
+  pytest_expected_min: 41
+  trl: 3
+  m_dot_fuel_g_s: 28.28
+  q_hex_kw: 23.2
+  a_o_required_mm2: 0.431
+  rubber_band_index: 0
+  ptwa_mm: 0.15
+
+literature_confidence:
+  ptwa_150um_ford: high
+  hem_flash_orifice: medium
+  emvt_power_vs_rpm: medium_high
+  dct_interrupt_context: high
+  flux_8ms_design_target: aggressive_unmeasured
+  active_aero_class: medium
+  lpbf_heads: medium
+
+golden:
+  checks: 6
+  trl: 3
+  ptwa_mm: 0.15

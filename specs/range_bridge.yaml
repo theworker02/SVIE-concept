@@ -1,0 +1,17 @@
+meta:
+  id: range_bridge
+  name: RANGE-BRIDGE Series Range-Extender Mode
+  version: "1.4.0"
+
+series_mode:
+  engine_kw_cruise: 55
+  generator_eta: 0.93
+  dc_bus_kw: 51.15
+  battery_buffer_kwh: 8.0
+  min_soc: 0.20
+  axiom_path: disabled_in_series
+
+golden:
+  dc_bus_kw: 51.15
+  engine_kw: 55
+  generator_eta: 0.93

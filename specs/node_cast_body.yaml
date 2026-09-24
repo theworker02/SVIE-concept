@@ -1,0 +1,16 @@
+meta:
+  id: node_cast_body
+  name: NODE-CAST Hybrid CFRP Tub + Cast Nodes
+  version: "1.3.0"
+
+structure:
+  torsion_nm_per_deg: 38000
+  prior_target_nm_per_deg: 35000
+  node_safety_factor: 1.92
+  min_node_sf: 1.8
+  hardpoint_tol_mm: 0.5
+
+golden:
+  torsion_nm_per_deg: 38000
+  node_sf: 1.92
+  torsion_gain_frac: 0.0857

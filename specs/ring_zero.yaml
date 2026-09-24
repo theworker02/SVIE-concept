@@ -1,0 +1,19 @@
+meta:
+  id: ring_zero
+  name: RING-ZERO Low-Friction PTWA Ring Pack
+  version: "1.3.0"
+
+baseline:
+  fmep_bar: 0.95
+  oil_consumption_index: 1.0
+
+ring_zero:
+  fmep_bar: 0.836
+  oil_consumption_index: 0.85
+  dlc_um: 2.0
+  ptwa_bore_mm: 0.15
+
+golden:
+  fmep_delta_frac: -0.12
+  oil_index: 0.85
+  fmep_bar: 0.836

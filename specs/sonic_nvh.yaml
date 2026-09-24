@@ -1,0 +1,36 @@
+# SONIC — Flat-plane NVH & exhaust-pulse architecture for SVIE-V8-HR
+# Grounded in flat-plane V8 practice (GT350, LT6): L-R alternate firing, secondary shake
+
+meta:
+  id: sonic_nvh
+  name: SONIC Flat-Plane Pulse & NVH System
+  version: "0.1.0"
+  engine_family: svie_v8_hr_357
+
+firing:
+  crank: 180 flat-plane
+  bank_alternation: L-R-L-R-L-R-L-R
+  exhaust_pulse_spacing_deg: 180
+  scavenging_advantage: even_pulse_headers_no_bundle_of_snakes
+
+nvh_mitigation:
+  short_stroke_mm: 75.0
+  high_rod_ratio: 1.84
+  mean_piston_speed_at_10k_m_s: 25.0
+  # Compare GT350 ~114 mph piston speed class; SVIE lower absolute stroke helps secondary
+  block_stiffening: deep_skirt_plus_ladder_girdle
+  damper: crank_nose_elastomer_plus_pendulum
+  chassis_isolation: CASMIR-informed mount map
+
+aether_exhaust:
+  name: AETHER Active Exhaust
+  headers: 4-2-1 equal length per bank
+  crossover: none_required_due_to_flat_plane
+  active_valves: true
+  brand_signature: tenor_flat_plane_not_crossplane_thunder
+  ties_to_axiom_shifts: bark_blip_on_gdsa_upshift
+
+golden:
+  pulse_spacing_deg: 180
+  mps_m_s: 25.0
+  secondary_index_vs_93mm_stroke: 0.650  # (75/93)^2

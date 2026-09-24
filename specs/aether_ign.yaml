@@ -1,0 +1,17 @@
+meta:
+  id: aether_ign
+  name: AETHER-IGN Adaptive Plasma Spark Hybrid
+  version: "1.3.0"
+
+spark_only:
+  lean_limit_lambda: 1.6
+
+plasma_assist:
+  lean_limit_lambda: 1.9
+  energy_mj: 100
+  energy_range_mj: [80, 120]
+
+golden:
+  lean_extension_lambda: 0.3
+  lean_limit_lambda: 1.9
+  energy_mj: 100

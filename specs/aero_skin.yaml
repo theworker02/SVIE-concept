@@ -1,0 +1,15 @@
+meta:
+  id: aero_skin
+  name: AERO-SKIN Active Diffuser DRS
+  version: "1.3.0"
+
+at_200_kmh:
+  delta_downforce_n: 420
+  delta_cd: -0.025
+  actuation_ms: 160
+  max_actuation_ms: 180
+
+golden:
+  delta_downforce_n: 420
+  delta_cd: -0.025
+  actuation_ms: 160

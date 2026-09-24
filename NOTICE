@@ -1,0 +1,17 @@
+# NOTICE
+
+SVIE (Supercritical Vapor-Injection Engine) proprietary package.
+
+Copyright (c) 2026 SVIE Advanced Engineering Research.
+
+This product includes software developed for OEM diligence and licensing.
+Third-party open-source components are copyright their respective owners
+and are governed by their licenses (see dependency lockfiles).
+
+Comparative references to Honda, Earth Dreams, VTEC, e:HEV, S+ Shift,
+and related marks are for technical discussion only and do not imply
+affiliation, endorsement, or sponsorship.
+
+For acquisition process: Acquisition.md  
+For security handling: SECURITY.md  
+For brand: brand/README.md

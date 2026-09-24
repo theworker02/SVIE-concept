@@ -1,0 +1,39 @@
+meta:
+  id: wiring_harness
+  name: SVIE Zone Wiring Harness
+  version: "1.3.0"
+
+topology: zone_backbone_sill
+
+zones:
+  - A_front
+  - B_cabin
+  - C_engine
+  - D_transaxle
+  - E_vault
+  - F_rear
+
+buses:
+  - CAN_FD_powertrain
+  - CAN_FD_body
+  - Ethernet_backbone
+  - LIN
+
+budgets:
+  copper_length_km: 1.65
+  max_copper_km: 1.8
+  mass_kg: 36
+  max_mass_kg: 38
+  vdrop_48v_frac_max: 0.02
+  vdrop_48v_frac: 0.015
+
+domains:
+  lv_12v: true
+  nexus_48v: true
+  hv_optional: true
+
+golden:
+  zone_count: 6
+  copper_km: 1.65
+  mass_kg: 36
+  bus_count: 4

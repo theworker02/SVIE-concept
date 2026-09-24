@@ -1,0 +1,39 @@
+meta:
+  id: carplay_ultra
+  name: Apple CarPlay Ultra Integration Policy
+  version: "1.3.0"
+
+# Design policy for next-gen CarPlay (Ultra) — deep vehicle integration
+# with OEM theme. Physical controls remain authoritative.
+
+requirements:
+  iphone_min: "iPhone 12"
+  ios_min: "18.5"
+  wireless: true
+
+surfaces:
+  center_glass: true
+  instrument_aperture: optional_hybrid
+  door_panels: false
+  headrest: false
+
+vehicle_functions_in_ultra:
+  climate: remote_of_physical
+  audio: remote_of_physical
+  drive_mode: remote_of_physical
+  navigation: glass_only
+  messaging: glass_only
+
+theme:
+  field: "#12151A"
+  accent: "#D4A017"
+  caption: "#E8ECF1"
+  oem_look_and_feel: true
+
+conflict_policy: physical_wins
+
+golden:
+  door_screens: 0
+  physical_wins: true
+  wireless: true
+  theme_tokens: 3

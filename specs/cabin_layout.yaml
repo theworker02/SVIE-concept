@@ -1,0 +1,36 @@
+meta:
+  id: cabin_layout
+  name: SVIE Cabin Interior Layout
+  version: "1.3.0"
+
+occupancy:
+  seats: 2
+  driver_ways: 6
+  passenger_ways: 4
+
+hmi:
+  philosophy: analog_first_luxury
+  os: AETHER-OS
+  cluster_style: hybrid_analog
+  cluster_in: 0
+  center_glass_in: 10.25
+  max_primary_screens: 1
+  physical_toggles: true
+  physical_rotaries: true
+  analog_gauges: true
+  sentinel_hard_telltale: true
+  carplay_ultra: guest_layer
+  door_screens: 0
+
+materials:
+  dash: soft_touch_aluminum_bezel
+  sill: exposed_cfrp_node_cast
+  dials: lacquered_graphite
+  rotaries: cnc_6061
+
+golden:
+  seats: 2
+  max_screens: 1
+  center_in: 10.25
+  toggles: true
+  door_screens: 0

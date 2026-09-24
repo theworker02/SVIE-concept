@@ -1,0 +1,69 @@
+meta:
+  id: data_room_index
+  name: SVIE Virtual Data Room Index
+  version: "1.3.0"
+
+folders:
+  - id: A00
+    name: Executive & deal
+    items:
+      - Acquisition.md
+      - docs/acquisition/EXECUTIVE-BRIEF.md
+      - docs/acquisition/TERM-SHEET.md
+      - docs/acquisition/DEAL-STRUCTURES.md
+      - docs/acquisition/CLOSING-CHECKLIST.md
+  - id: A01
+    name: Value & competition
+    items:
+      - docs/acquisition/VALUE-THESIS.md
+      - docs/acquisition/COMPETITIVE-MATRIX.md
+      - docs/VIEWER-GUIDE.md
+  - id: A02
+    name: IP & counsel
+    items:
+      - docs/acquisition/IP-INVENTORY.md
+      - docs/claim-charts.md
+      - LICENSE
+      - NOTICE
+      - SECURITY.md
+  - id: B00
+    name: Physics & specs
+    items:
+      - packages/physics-engine/
+      - specs/
+      - packages/physics-engine/tests/
+  - id: B01
+    name: Technical docs
+    items:
+      - docs/whitepaper.md
+      - docs/validation-report.md
+      - docs/INDEX.md
+  - id: C00
+    name: Vehicle design & HMI
+    items:
+      - docs/design-system/
+      - design/renders/
+      - specs/aether_os.yaml
+  - id: D00
+    name: Compliance & supply
+    items:
+      - docs/compliance/
+      - specs/homologation_path.yaml
+      - specs/iso26262_sentinel.yaml
+      - specs/iso21434_aether.yaml
+      - specs/supply_chain_tier1.yaml
+  - id: E00
+    name: Portal & demo
+    items:
+      - packages/web-portal/
+      - brand/
+
+access_tiers:
+  - teaser
+  - nda_full
+  - clean_team_counsel
+
+golden:
+  folders: 8
+  access_tiers: 3
+  term_sheet_present: true

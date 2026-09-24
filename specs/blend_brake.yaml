@@ -1,0 +1,34 @@
+# BLEND — Brake-by-wire regen fill during AXIOM/HERT ratio changes
+# Addresses regen torque hole when e-machine is gear-coupled (cf. US12515672 class)
+# SVIE differentiator: 4 ms GDSA window → friction blend pulse is tiny vs DCT/AMT
+
+meta:
+  id: blend_brake
+  name: BLEND Shift-Gap Regen Continuity
+  version: "0.1.0"
+  status: concept-new-system
+
+architecture:
+  brake: dry EMB brake-by-wire (no vacuum booster)
+  regen_sources: [NEXUS_48_P1_ISG, ehe_v_traction_motor]
+  supervisor: VECTOR_HCP
+  coordinates: [TCM_AXIOM, BCU_EMB, NEXUS]
+
+timing:
+  gdsa_shift_ms: 4.0
+  blend_lead_ms: 2.0
+  friction_fill_ms: 6.0
+  total_decel_continuity_window_ms: 8.0
+
+decel_model:
+  # At 0.3 g request, 1474 kg vehicle
+  vehicle_mass_kg: 1474
+  target_decel_g: 0.30
+  regen_unavailable_during_shift: true
+  friction_fill_fraction: 1.0
+
+golden:
+  shift_ms: 4.0
+  continuity_window_ms: 8.0
+  target_brake_force_n: 4336.4  # m * 0.3 * 9.81
+  vs_typical_amt_shift_hole_ms: 150

@@ -1,0 +1,73 @@
+{
+  "product": "SVIE",
+  "version": "1.3.0",
+  "mode": "github_pages_static",
+  "steps": [
+    {
+      "id": "01-sfv-wot",
+      "title": "SFV — WOT air/fuel baseline",
+      "summary": "Supercritical flash fuel delivery sized at wide-open throttle.",
+      "metrics": {
+        "m_dot_fuel_g_s": 28.28,
+        "m_dot_air_kg_s": 0.402,
+        "e_in_kw": 1280.7,
+        "mg_per_stroke": 99.7
+      },
+      "module": "svie_physics.air_fuel"
+    },
+    {
+      "id": "02-hex",
+      "title": "HEX — exhaust recuperation",
+      "summary": "Heat exchanger duty recovering supercritical enthalpy into the fuel path.",
+      "metrics": {
+        "q_hex_kw": 23.2,
+        "exhaust_recovery_ratio": 0.041,
+        "brake_power_kw": 560.0
+      },
+      "module": "svie_physics.heat_exchanger"
+    },
+    {
+      "id": "03-hem",
+      "title": "HEM — choked flash orifice",
+      "summary": "Homogeneous-equilibrium choked flow sets injector orifice area.",
+      "metrics": {
+        "a_o_required_mm2": 0.431,
+        "is_choked": true,
+        "flash_boiling": true
+      },
+      "module": "svie_physics.hem_choked_flow"
+    },
+    {
+      "id": "04-axiom",
+      "title": "AXIOM — anti-CVT rubber-band index",
+      "summary": "Discrete multi-ratio path; rubber-band index locked at 0 (no belt).",
+      "metrics": {
+        "rubber_band_index": 0,
+        "mech_efficiency": 0.96,
+        "shift_ms": 120
+      },
+      "module": "svie_physics.axiom_drive"
+    },
+    {
+      "id": "05-trl",
+      "title": "TRL roadmap — hardware honesty",
+      "summary": "Hardware remains TRL-3; the acquisition package is production-ready.",
+      "metrics": {
+        "current_trl": 3,
+        "current_name": "analytical_proof_of_concept"
+      },
+      "module": "svie_physics.chronos_sentinel"
+    },
+    {
+      "id": "06-acquire",
+      "title": "Acquisition suite — package readiness",
+      "summary": "Weighted readiness scorecard, deal structure, and data-room index.",
+      "metrics": {
+        "weighted_score": 90.15,
+        "production_ready_acquisition": true,
+        "preferred_deal": "exclusive_fou_plus_option"
+      },
+      "module": "svie_physics.acquisition_suite"
+    }
+  ]
+}

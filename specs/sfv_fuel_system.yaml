@@ -1,0 +1,37 @@
+# SVIE Supercritical Flash-Vaporization (SFV) fuel system
+# Pressure ladder and heat-exchanger enthalpy requirements
+
+meta:
+  id: sfv_fuel_system
+  name: Supercritical Flash-Vaporization Fuel Delivery
+  version: "0.1.0"
+
+critical_point_gasoline:
+  t_c_c: 280          # ~280–310 °C critical temperature band
+  t_c_upper_c: 310
+  p_c_mpa: 2.7        # ~2.7–3.1 MPa
+  p_c_upper_mpa: 3.1
+
+pressure_ladder_mpa:
+  lift_pump: 0.6
+  high_pressure_pump: 7.0
+  heat_exchanger_exit: 6.8
+  hex_delta_p_max: 0.2
+  sonic_expansion_downstream: 1.0
+  port_vapor_injector: [0.8, 1.2]
+  direct_vapor_injector: [3.5, 4.2]
+
+heat_exchanger:
+  t1_c: 25
+  t2_c: 310
+  operating_pressure_mpa: 7.0
+  delta_h_sensible_kj_kg: 633
+  delta_h_phase_kj_kg: 187
+  delta_h_total_kj_kg: 820
+  bank_surface_area_m2: 0.14
+  combined_surface_area_m2: 0.28
+
+golden:
+  q_hex_kw: 23.19
+  q_hex_per_bank_kw: 11.60
+  exhaust_recovery_ratio: 0.0622

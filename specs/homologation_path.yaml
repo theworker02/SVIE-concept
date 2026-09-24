@@ -1,0 +1,36 @@
+meta:
+  id: homologation_path
+  name: SVIE Homologation Path (Design Intent)
+  version: "1.3.0"
+  status: design_package
+
+markets:
+  - id: US_EPA_CARB
+    phases: ["concept_evidence", "prototype_dyno", "certification_vehicle"]
+    gate_years_from_trl4: 3
+  - id: EU_WLTP_RDE
+    phases: ["concept_evidence", "prototype_dyno", "type_approval"]
+    gate_years_from_trl4: 3
+  - id: JP_MLIT
+    phases: ["concept_evidence", "prototype_dyno", "type_approval"]
+    gate_years_from_trl4: 3
+
+fuels:
+  - gasoline_sfv
+  - hydrogen_di
+
+blockers_today:
+  - no_dyno_certificates
+  - no_production_bom_quotes
+  - no_oem_vehicle_integration
+
+next_hardware:
+  - spray_rig_G1
+  - single_cylinder_G2
+  - multi_cylinder_mule_G3
+
+golden:
+  markets: 3
+  fuels: 2
+  blockers: 3
+  path_documented: true

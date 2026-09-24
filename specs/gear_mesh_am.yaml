@@ -1,0 +1,19 @@
+meta:
+  id: gear_mesh_am
+  name: GEAR-MESH-AM Lattice Carrier
+  version: "1.3.0"
+
+solid_carrier:
+  mass_kg: 3.4
+  mesh_harmonic_amp: 1.0
+
+lattice:
+  mass_kg: 2.788
+  mesh_harmonic_amp: 0.75
+  fatigue_sf: 1.65
+  min_fatigue_sf: 1.6
+
+golden:
+  mass_delta_frac: -0.18
+  harmonic_delta_frac: -0.25
+  fatigue_sf: 1.65

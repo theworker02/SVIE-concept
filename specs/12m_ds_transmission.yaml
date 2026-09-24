@@ -1,0 +1,36 @@
+# SVIE 12-Speed Dual-Countershaft Splitter Manual (12M-DS)
+
+meta:
+  id: 12m_ds
+  name: 12-Speed Dual-Countershaft Splitter Manual
+  version: "0.1.0"
+  audience: enthusiast-sports
+
+architecture:
+  main_box: 6-speed H-pattern gated manual
+  splitter: electro-pneumatic 2-speed planetary range/splitter
+  actuator: thumb-activated pneumatic splitter toggle on shift knob
+  target_rpm_drop_between_shifts: 250
+
+# Representative close-ratio map (Low/High per main gate)
+# Ratios are engineering concept values for efficiency-island tracking
+gear_ratios:
+  "1L": 3.850
+  "1H": 3.420
+  "2L": 2.780
+  "2H": 2.470
+  "3L": 2.050
+  "3H": 1.820
+  "4L": 1.520
+  "4H": 1.350
+  "5L": 1.140
+  "5H": 1.010
+  "6L": 0.880
+  "6H": 0.780
+
+final_drive: 3.730
+
+notes: >
+  Hybrid of commercial heavy-duty splitter mechanics and sports-car gated
+  manuals. Keeps the ultra-lean SVIE engine in a narrow RPM efficiency band
+  with under ~250 RPM drops between sequential splits.

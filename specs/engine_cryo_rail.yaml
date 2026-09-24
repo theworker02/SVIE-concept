@@ -1,0 +1,24 @@
+meta:
+  id: engine_cryo_rail
+  name: CRYO-RAIL Thermal-Buffered SFV Rail
+  version: "1.3.0"
+
+pcm:
+  melt_window_c: [290, 310]
+  mass_kg: 0.85
+  latent_kj_kg: 180
+
+rail:
+  volume_l: 0.42
+  unbuffered_delta_t_k: 22.0
+  target_delta_t_k: 8.0
+  pressure_droop_mpa_max: 0.15
+  pressure_droop_mpa: 0.12
+
+step_load:
+  heat_pulse_kj: 12.0
+
+golden:
+  delta_t_k: 8.0
+  buffer_effectiveness: 0.636
+  pressure_droop_mpa: 0.12

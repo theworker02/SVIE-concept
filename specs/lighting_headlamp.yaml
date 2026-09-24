@@ -1,0 +1,23 @@
+meta:
+  id: lighting_headlamp
+  name: SVIE Vertical Instrument Headlamp
+  version: "1.3.0"
+
+signature: vertical_instrument_stack
+drl_color: amber
+
+photometry:
+  low_beam_lm: 1200
+  min_low_beam_lm: 1100
+  power_both_drl_low_w: 42
+  max_power_w: 45
+
+construction:
+  housing: die_cast_aluminum
+  lens: polycarbonate_hardcoat
+  ip_target: IP6K9K
+
+golden:
+  low_beam_lm: 1200
+  power_w: 42
+  modules_vertical: 4

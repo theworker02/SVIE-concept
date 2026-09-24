@@ -1,0 +1,36 @@
+# MIRAGE — Real-time reduced-order thermal digital twin for SVIE nodes
+# Aligned with 2024-25 OEM digital-twin thermal practice (ROM on ECU)
+
+meta:
+  id: mirage_twin
+  name: MIRAGE Predictive Thermal Digital Twin
+  version: "0.1.0"
+  status: concept-new-system
+
+nodes:
+  - id: injector_boss
+    limit_c: 140
+    tau_s: 12.0
+  - id: hex_fuel_exit
+    limit_c: 310
+    tau_s: 8.0
+  - id: ptwa_bore
+    limit_c: 180
+    tau_s: 25.0
+  - id: deva_coil
+    limit_c: 155
+    tau_s: 6.0
+  - id: nexus_isg
+    limit_c: 120
+    tau_s: 40.0
+
+control:
+  update_hz: 50
+  derate_margin_c: 8.0
+  actions: [enrich_lambda, cut_ceb, reduce_deva_lift, increase_water_di, limit_bsg]
+
+golden:
+  node_count: 5
+  update_hz: 50
+  # First-order step: T(t)=Tinf+(T0-Tinf)e^{-t/τ}; time to 63% = τ
+  injector_tau_s: 12.0

@@ -1,0 +1,40 @@
+# NEXUS-48 — 48V electrical spine for DEVA + mild-hybrid assist
+# Researched against P0/P1 BSG architectures (onsemi/Valeo/SEG)
+
+meta:
+  id: nexus_48
+  name: NEXUS-48 Electrical Architecture
+  version: "0.1.0"
+  status: concept-new-system
+
+topology:
+  machine_position: P1  # crank-integrated ISG preferred over belt P0 for 10k RPM
+  voltage_v: 48
+  battery_kwh: 0.9
+  bsg_peak_kw: 20
+  bsg_continuous_kw: 12
+  dcdc_12v_kw: 3.5
+  loads:
+    - DEVA valvetrain
+    - GDSA piezo pilots
+    - water DI pump
+    - e-fill AXIOM assist
+    - CASMIR AE front-end
+
+energy_budget_wot_8500:
+  deva_kw: 7.26
+  auxiliaries_kw: 1.8
+  total_draw_kw: 9.06
+  bsg_available_kw: 12.0
+  margin_kw: 2.94
+
+recuperation:
+  peak_regen_kw: 18
+  feeds_deva_directly: true
+  co2_saving_class_pct_vs_12v_only: 10
+
+golden:
+  total_draw_wot_kw: 9.06
+  margin_kw: 2.94
+  battery_kwh: 0.9
+  voltage_v: 48

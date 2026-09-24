@@ -1,0 +1,32 @@
+# CHRONOS — Cold-start / catalyst light-off / CEB / Orbital water orchestration
+
+meta:
+  id: chronos_cold_start
+  name: CHRONOS Cold-Start Orchestrator
+  version: "0.1.0"
+
+phases:
+  - id: t0_precharge
+    duration_s: 0.5
+    actions: [nexus_48_precharge, sentinel_self_test]
+  - id: t1_orbital_h2
+    duration_s: 2.0
+    actions: [orbital_water_electrolysis_burst, ceb_catalyst_warm]
+  - id: t2_crank
+    duration_s: 1.2
+    actions: [p1_isg_crank, late_h2_di, psi_plasma, water_di_pilot]
+  - id: t3_lightoff
+    duration_s: 8.0
+    actions: [h2_scr_reductant_dose, rich_pulse_stoich_tether, conformal_coolant_bypass]
+  - id: t4_run
+    duration_s: 0.0
+    actions: [lean_map_enable, axiom_drive_ready, casmir_arm]
+
+totals:
+  time_to_first_fire_s: 3.7
+  time_to_aftertreatment_active_s: 11.7
+
+golden:
+  time_to_first_fire_s: 3.7
+  time_to_aft_s: 11.7
+  phase_count: 5

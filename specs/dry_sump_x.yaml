@@ -1,0 +1,20 @@
+meta:
+  id: dry_sump_x
+  name: DRY-SUMP-X Scavenge Tied to OIL-SPINE
+  version: "1.4.0"
+
+scavenge:
+  stages: 3
+  pump_flow_l_min_at_10k: 48.0
+  min_flow_l_min: 40.0
+  crankcase_pressure_kpa: -8.0
+  target_pressure_kpa_max: -5.0
+
+integration:
+  feeds_oil_spine: true
+  windage_tray: true
+
+golden:
+  stages: 3
+  flow_l_min: 48.0
+  crankcase_kpa: -8.0

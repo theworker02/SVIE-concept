@@ -1,0 +1,108 @@
+# Breakthrough subsystems Honda R&D would not expect in a single road car
+# Grounded in published Honda H2/FC/AE work + SVIE-unique combinations
+
+meta:
+  id: breakthrough_subsystems
+  name: SVIE Beyond-Horizon Feature Set
+  version: "0.1.0"
+  status: concept-research
+  intent: >
+    Features that exceed typical production ICE packaging — dual-use with
+    Honda hydrogen roadmap, acoustic structural health, cryogenic charge
+    densification from HERT expansion, and plasma-assisted ultra-lean ignition.
+
+features:
+  CCD:
+    full_name: Cryogenic Charge Densification
+    summary: >
+      Route HERT cold-gas turbine exit (~130 K isentropic) through a
+      charge-air intercooler jacket before GDSA scavenge / engine feed,
+      densifying intake without turbo lag and reclaiming expansion exergy twice
+      (shaft work + volumetric efficiency).
+    novelty_vs_prior_art: >
+      Published H2 expanders recover shaft/electric work only. CCD couples
+      the cold sink directly to SVIE gaseous charge density — not found in
+      production FCEV or DI gasoline architectures.
+    metrics:
+      t2s_cold_k: 129.52
+      target_intake_density_gain_pct: 8.5
+      parasitic_pump_kw: 0.4
+
+  CASMIR:
+    full_name: Chassis Acoustic Structural Modal Integrity Relay
+    summary: >
+      Continuous acoustic-emission (AE) monitoring at Nodes A–D, transferring
+      Honda’s published AE damage-analysis technique for high-pressure H2
+      containers onto the carbon monocoque and DKIS towers.
+    novelty_vs_prior_art: >
+      AE for tanks exists at Honda R&D; applying live AE modal integrity to
+      torsional load-path nodes with closed-loop DKIS derate is vehicle-new.
+    metrics:
+      sensor_nodes: [A, B, C, D]
+      sample_rate_khz: 500
+      limp_derate_on_ae_burst: true
+
+  PSI:
+    full_name: Plasma Spear Ignition
+    summary: >
+      Nanosecond pulsed plasma dischargers in each chamber stabilize
+      homogeneous ultra-lean gaseous SVIE charges at AFR up to 35:1 where
+      spark kernels quench.
+    novelty_vs_prior_art: >
+      Plasma ignition research exists academically; pairing with dry
+      supercritical-flash gaseous charge + DEVA Miller/Atkinson switching
+      is the SVIE differentiator for Honda Earth Dreams BTE leapfrogging.
+    metrics:
+      pulse_width_ns: 80
+      energy_per_event_mj: 15
+      target_afr_max: 35.0
+
+  DKIS_TFF:
+    full_name: Decoupled Kinetic Interconnected Suspension — Torsion Feedforward
+    summary: >
+      Hydraulic interconnection gains scheduled from measured chassis twist
+      rate (from CASMIR + IMU) so roll stiffness distribution tracks the
+      35 kNm/deg design intent instead of drifting when the tub softens.
+    novelty_vs_prior_art: >
+      Interconnected suspensions raise roll without warp stiffness; adding
+      live torsion feedforward closes the loop between Kθ and Kφ that OEM
+      calibrators normally treat as static.
+    metrics:
+      k_phi_total_nm_per_deg: 2500
+      k_theta_target_nm_per_deg: 35000
+      update_rate_hz: 200
+
+  DUAL_RAIL:
+    full_name: Dual-Mode SFV / H2 Co-Rail
+    summary: >
+      Shared gaseous injector family and rail hardware accepts either
+      supercritical-flash gasoline vapor or HERT-conditioned H2 at 1–4 MPa,
+      enabling a Honda-compatible hydrogen ICE / hybrid path without a
+      second fuel-system architecture.
+    novelty_vs_prior_art: >
+      Aligns with Honda’s hydrogen business (FCEV + H2 ICE research) while
+      preserving gasoline SFV for markets without H2 retail.
+    metrics:
+      rail_pressure_mpa: [0.8, 4.2]
+      fuels: [gasoline_sfv_vapor, hydrogen]
+
+  ORBITAL_WATER:
+    full_name: Onboard Regenerative Water-Electrolysis Buffer
+    summary: >
+      Compact high-ΔP electrolysis stack (Honda ISS / lunar regenerative FC
+      tech transfer) generates a small H2 buffer from recovered condensate
+      for CEB catalyst light-off and cold-start HEX assist — terrestrial
+      reuse of Honda space electrolysis IP themes.
+    novelty_vs_prior_art: >
+      Space regenerative FC is Honda’s published direction; packaging a
+      micro-buffer for CEB/cold-start on a sports car is an unexpected
+      terrestrial crossover.
+    metrics:
+      buffer_h2_g: 40
+      cold_start_assist_s: 12
+
+golden:
+  ccd_density_gain_pct: 8.5
+  psi_afr_max: 35.0
+  casmir_nodes: 4
+  dual_rail_fuels: 2

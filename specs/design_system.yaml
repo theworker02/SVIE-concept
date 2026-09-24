@@ -1,0 +1,24 @@
+meta:
+  id: design_system
+  name: SVIE Vehicle Design System Rollup
+  version: "1.3.0"
+
+renders:
+  - svie-exterior-front.png
+  - svie-exterior-rear.png
+  - svie-headlight-detail.png
+  - svie-cabin-interior.png
+  - svie-hmi-cabin-analog.png
+  - svie-hmi-analog-stack.png
+  - svie-packaging-cutaway.png
+
+tokens:
+  graphite: "#12151A"
+  amber: "#D4A017"
+  steel: "#7A8A9A"
+  ink: "#E8ECF1"
+
+golden:
+  render_count: 7
+  token_count: 4
+  posture: design_package_not_main_plan

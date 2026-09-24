@@ -1,0 +1,33 @@
+meta:
+  id: iso26262_sentinel
+  name: SENTINEL Functional Safety Mapping (ISO 26262 Design Intent)
+  version: "1.3.0"
+  status: design_package_not_certificate
+
+items:
+  - id: hazard_fuel_path
+    asil_target: C
+    owner: SENTINEL
+  - id: hazard_h2_isolation
+    asil_target: D
+    owner: SENTINEL
+  - id: hazard_torque_security
+    asil_target: C
+    owner: VECTOR
+  - id: hazard_shift_interrupt
+    asil_target: B
+    owner: FLUX-SHIFT
+  - id: hazard_cluster_telltales
+    asil_target: B
+    owner: AETHER.safety
+
+process:
+  hara_status: draft_in_repo
+  fsc_status: draft_in_repo
+  certificate: false
+
+golden:
+  items: 5
+  max_asil: D
+  certificate: false
+  draft_ready: true

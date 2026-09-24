@@ -1,0 +1,27 @@
+meta:
+  id: ota_fleet_policy
+  name: SVIE OTA & Fleet Policy (Design Intent)
+  version: "1.3.0"
+
+rules:
+  signed_only: true
+  rollback_required: true
+  aether_guest_isolated: true
+  sentinel_not_ota_disableable: true
+  max_campaign_pct: 10
+
+channels:
+  - powertrain_calibration
+  - aether_theme
+  - nexus_maps
+
+forbidden:
+  - unsigned_payloads
+  - remote_disable_sentinel
+  - physical_override_bypass
+
+golden:
+  signed_only: true
+  rollback: true
+  channels: 3
+  forbidden: 3

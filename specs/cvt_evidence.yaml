@@ -1,0 +1,63 @@
+# Evidence dossier — why SVIE rejects belt/chain CVT and Honda eCVT rubber-band paths
+# Sources: ICCT transmission paper, CVT slip/clamp literature, Honda HR-V belt TSBs, Honda e:HEV 2024 briefing
+
+meta:
+  id: cvt_evidence
+  name: CVT Teardown & Competitive Evidence
+  version: "0.1.0"
+  status: diligence-research
+
+literature_efficiency:
+  # Mechanical path efficiency (transmission alone) — published ranges
+  cvt_mech_efficiency_peak: 0.88
+  cvt_mech_efficiency_typical_cycle: 0.82
+  cvt_target_band_cited: [0.75, 0.90]  # often not fully achieved (Springer CVT slip paper)
+  dct_dry_mech_efficiency_typical: 0.94
+  amt_dog_mech_efficiency_typical: 0.96
+  hert_12_dog_mech_efficiency_design: 0.965
+
+parasitic_losses_kw_at_100kw_shaft:
+  # At ~100 kW engine shaft into gearbox
+  cvt_clamp_and_pump_kw: 8.5
+  cvt_belt_friction_kw: 5.0
+  cvt_total_parasitic_kw: 13.5
+  hert_gdsa_average_kw: 0.4
+  hert_bearing_mesh_kw: 2.2
+  hert_total_parasitic_kw: 2.6
+
+torque_ceiling:
+  # Metal belt CVT practical passenger-car torque class vs dog clutch
+  typical_passenger_cvt_nm: 250
+  advanced_cvt_nm: 400
+  hert_12_input_nm: 850
+  svie_v8_hr_peak_tq_nm_class: 450
+
+honda_field_evidence:
+  - id: HR-V-21-047
+    summary: 2016-2020 HR-V CVT premature belt deterioration warranty extension to 7yr/150k mi
+    risk: loss of propulsion / belt shed metal
+  - id: Civic-17-003
+    summary: Hot-restart grinding from CVT valve-body vibration (updated valve body)
+  - id: HCF-2
+    summary: Strict fluid dependency — wrong fluid risks belt damage
+
+honda_current_rd_2024_2026:
+  priorities:
+    - next-gen e:HEV 1.5L/2.0L DI Atkinson + electric CVT dual-motor drive units
+    - S+ Shift — software RPM shaping to fake gear feel on e:HEV
+    - electric AWD independent motor TCS
+    - fuel-cell durability/cost, H2 tank AE, ISS electrolysis
+  not_publicly_reached:
+    - dog-clutch 12-speed with scavenged H2 pneumatic 4 ms shifts
+    - supercritical flash gasoline vapor + H2 co-rail sports ICE
+    - tank-pressure impulse turbine feeding both shaft and GDSA
+    - chassis AE closed-loop to interconnected suspension
+    - conformal LPBF head + PTWA H2 DI at 10k RPM with water DI
+
+golden:
+  eta_cvt_cycle: 0.82
+  eta_hert: 0.965
+  parasitic_cvt_kw: 13.5
+  parasitic_hert_kw: 2.6
+  delta_parasitic_kw: 10.9
+  shaft_in_kw: 100.0

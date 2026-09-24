@@ -1,0 +1,36 @@
+# e:HEV Bridge — mate SVIE ICE to Honda-style dual-motor hybrid WITHOUT belt/eCVT
+# Gap exploit: Honda next-gen e:HEV still centers on electric CVT drive units
+
+meta:
+  id: ehe_v_bridge
+  name: SVIE e:HEV Bridge (Beltless Dual-Motor Mate)
+  version: "0.1.0"
+  status: concept-new-system
+
+architecture:
+  ice: SVIE-V8-HR or SFV gasoline module
+  generator_motor: coaxial PM on crank nose
+  traction_motor: on gearbox output / final drive
+  coupling: multi-plate wet clutch pack (no belt, no eCVT cones)
+  modes:
+    - EV_drive
+    - hybrid_series
+    - engine_direct_via_AXIOM_ratios
+  removes:
+    - metal pushing V-belt
+    - pulley clamp hydraulics
+    - eCVT two-motor rubber-band unit
+
+efficiency_targets:
+  engine_direct_path_eta: 0.965
+  series_path_electrical_eta: 0.90
+  vs_honda_ecvt_mech_path_eta: 0.88
+
+control:
+  uses_deva_for_atkinson_direct: true
+  uses_hert_gdsa_in_engine_direct: true
+  s_plus_competitor: AXIOM real ratio steps instead of S+ simulated shifts
+
+golden:
+  engine_direct_eta: 0.965
+  no_belt: true

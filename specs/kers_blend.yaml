@@ -1,0 +1,16 @@
+meta:
+  id: kers_blend
+  name: KERS-BLEND Kinetic Recovery into BLEND Path
+  version: "1.4.0"
+
+event:
+  recoverable_kj: 180
+  blend_capture_frac: 0.62
+  captured_kj: 111.6
+  motor_peak_kw: 40
+  fade_compensation: true
+
+golden:
+  captured_kj: 111.6
+  capture_frac: 0.62
+  motor_kw: 40

@@ -1,0 +1,17 @@
+meta:
+  id: cell_vault
+  name: CELL-VAULT Structural Energy Vault
+  version: "1.3.0"
+
+vault:
+  absorbed_energy_kj: 88
+  min_energy_kj: 85
+  intrusion_m: 0.11
+  max_intrusion_m: 0.12
+  mass_kg: 46
+  max_mass_kg: 48
+
+golden:
+  energy_kj: 88
+  intrusion_m: 0.11
+  mass_kg: 46

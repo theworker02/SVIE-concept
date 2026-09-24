@@ -1,0 +1,40 @@
+meta:
+  id: deal_structure
+  name: SVIE Recommended Deal Structures
+  version: "1.3.0"
+
+structures:
+  - id: exclusive_fou_plus_option
+    name: Exclusive automotive FOU + buyout option
+    preferred: true
+    phases: 3
+    close_days_typical: 45
+  - id: asset_purchase
+    name: Full asset purchase (IP + code + brand)
+    preferred: false
+    phases: 2
+    close_days_typical: 60
+  - id: staged_package_license
+    name: Staged modular license (SFV → AXIOM → rest)
+    preferred: false
+    phases: 4
+    close_days_typical: 30
+
+escrow:
+  source_code_escrow: true
+  golden_tag_required: true
+  tag_pattern: "v1.3.*"
+
+earnout_gates:
+  - G1_spray_rig
+  - G2_single_cylinder
+  - G3_patent_filings
+
+nda_required: true
+field_of_use_default: automotive_propulsion
+
+golden:
+  preferred_structure: exclusive_fou_plus_option
+  structures: 3
+  escrow: true
+  earnout_gates: 3

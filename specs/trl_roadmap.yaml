@@ -1,0 +1,48 @@
+# TRL / licensing roadmap for OEM diligence
+
+meta:
+  id: trl_roadmap
+  name: SVIE Technology Readiness Roadmap
+  version: "0.1.0"
+
+stages:
+  - trl: 3
+    name: Analytical proof
+    status: complete_in_repo
+    artifacts: [physics_engine, golden_tests, specs]
+  - trl: 4
+    name: Component bench
+    status: planned
+    artifacts: [piezo_orifice_rig, hert_turbine_spin, deva_single_valve]
+  - trl: 5
+    name: Single-cylinder H2 DI
+    status: planned
+    artifacts: [optical_pi_campaign, water_di_map]
+  - trl: 6
+    name: V8 mule (HR 3.57)
+    status: planned
+    artifacts: [dyno_bte, axiom_shift_durability]
+  - trl: 7
+    name: Chassis dyno / proving ground
+    status: planned
+    artifacts: [sentinel_crash_sim, casmir_fleet]
+  - trl: 8
+    name: Pre-production pilot
+    status: planned
+    artifacts: [lpbf_head_tooling, sand_mold_line]
+  - trl: 9
+    name: Production / licensed
+    status: planned
+    artifacts: [oem_integration]
+
+licensing_packages:
+  - SFV_fuel_path
+  - HERT_AXIOM_drive
+  - DEVA_NEXUS48
+  - H2_HR_architecture
+  - CASMIR_DKIS
+  - full_stack
+
+golden:
+  current_trl: 3
+  stages: 7

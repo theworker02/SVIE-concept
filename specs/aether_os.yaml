@@ -1,0 +1,36 @@
+meta:
+  id: aether_os
+  name: AETHER-OS Analog-First Vehicle OS
+  version: "1.3.0"
+  status: production-ready-design-package
+
+philosophy:
+  analog_primacy: true
+  max_primary_screens: 1
+  hardware_is_truth: true
+  carplay_ultra_guest: true
+
+modules:
+  - aether.kernel
+  - aether.safety
+  - aether.analog
+  - aether.guest
+  - aether.audio
+  - aether.vehicle
+
+displays:
+  center_glass_in: 10.25
+  max_center_glass_in: 10.25
+  cluster_style: hybrid_analog_with_caption_strip
+  door_screens: 0
+  mirror_screens: 0
+
+glass:
+  retractable_cover: true
+  anti_reflection: true
+
+golden:
+  max_screens: 1
+  center_in: 10.25
+  modules: 6
+  analog_primacy: true

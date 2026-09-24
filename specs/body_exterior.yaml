@@ -1,0 +1,32 @@
+meta:
+  id: body_exterior
+  name: SVIE Exterior Body Design Intent
+  version: "1.3.0"
+  status: production-ready-design-package
+
+vehicle:
+  architecture: mid_engine_coupe
+  length_m: 4.52
+  width_m: 1.94
+  height_m: 1.18
+  wheelbase_m: 2.692
+  track_m: 1.60
+  ground_clearance_mm: 110
+  cd_drs_closed: 0.32
+  cd_drs_open: 0.295
+
+surfaces:
+  character_lines: 1
+  primary_paint: "#12151A"
+  accent_lighting_only: true
+
+materials:
+  skins: aluminum_or_smc
+  aero: CFRP
+  nodes: A356
+
+golden:
+  length_m: 4.52
+  height_m: 1.18
+  cd_closed: 0.32
+  character_lines: 1

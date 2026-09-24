@@ -1,0 +1,16 @@
+meta:
+  id: pulse_egr
+  name: PULSE-EGR Cooled Pulsed Exhaust Gas Recirculation
+  version: "1.4.0"
+
+cruise_lean:
+  egr_mass_frac: 0.18
+  max_egr_frac: 0.25
+  nox_reduction_frac: 0.42
+  pulse_hz: 40
+  cooler_effectiveness: 0.72
+
+golden:
+  egr_frac: 0.18
+  nox_reduction_frac: 0.42
+  pulse_hz: 40

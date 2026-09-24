@@ -1,0 +1,30 @@
+# SENTINEL — H2 safety, leak, crash, and thermal runaway interlocks
+
+meta:
+  id: sentinel_h2_safety
+  name: SENTINEL Hydrogen Safety Envelope
+  version: "0.1.0"
+
+sensing:
+  cabin_h2_sensors: 3
+  underhood_h2_sensors: 4
+  tank_ae_channels: 2  # Honda-style AE for Type IV tank
+  leak_threshold_pct_lel: 1.0
+  isolation_time_ms: 50
+
+actuators:
+  tank_solenoid_close: true
+  hert_bypass_open: true
+  hv_and_48v_contactors_open: true
+  cabin_blower_purge: true
+  engine_fuel_cut: true
+
+crash:
+  inertia_switch: true
+  can_fd_hard_fault_line: true
+  post_crash_ventilation_s: 120
+
+golden:
+  isolation_ms: 50
+  sensors_total: 9
+  lel_threshold_pct: 1.0

@@ -1,0 +1,32 @@
+meta:
+  id: iso21434_aether
+  name: AETHER-OS Cybersecurity (ISO/SAE 21434 Design Intent)
+  version: "1.3.0"
+  status: design_package_not_certificate
+
+threats:
+  - id: T1_guest_glass_injection
+    surface: CarPlay_Ultra_guest
+    mitigation: physical_wins_policy
+  - id: T2_ota_unsigned
+    surface: OTA
+    mitigation: signed_bundles_only
+  - id: T3_diag_port
+    surface: OBD
+    mitigation: locked_diag_roles
+  - id: T4_nexus_bus_spoof
+    surface: NEXUS-48
+    mitigation: authenticated_frames_design
+
+zones:
+  - vehicle_ecu_asil
+  - guest_glass_qm
+  - phone_untrusted
+
+certificate: false
+
+golden:
+  threats: 4
+  zones: 3
+  certificate: false
+  guest_untrusted: true

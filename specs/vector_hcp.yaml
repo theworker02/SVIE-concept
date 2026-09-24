@@ -1,0 +1,31 @@
+# VECTOR — Supervisory hybrid/vehicle control plane
+# Single HCP coordinating subsystems Honda keeps fragmented across e:HEV domains
+
+meta:
+  id: vector_hcp
+  name: VECTOR Supervisory Control Plane
+  version: "0.1.0"
+
+domains:
+  - DEVA
+  - AXIOM_HERT
+  - NEXUS_48
+  - SFV_or_H2
+  - SENTINEL
+  - BLEND
+  - MIRAGE
+  - CASMIR_DKIS
+  - CHRONOS
+  - AETHER
+
+buses:
+  - CAN_FD_powertrain
+  - CAN_FD_chassis
+  - eth_backbone_diagnostics
+
+cycle_time_ms: 1.0
+failsafe: sentinel_dominates
+
+golden:
+  domain_count: 10
+  cycle_ms: 1.0

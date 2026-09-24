@@ -1,0 +1,52 @@
+# Hydrogen DI combustion control — pre-ignition, NOx, aftertreatment
+# Grounded in SAE 2023-32-0169 (boost + late DI), water DI NOx papers, H2-SCR reviews
+
+meta:
+  id: h2_combustion_control
+  name: SVIE-V8-HR Hydrogen Combustion & Emissions Control
+  version: "0.1.0"
+  status: concept-engineering-baseline
+  engine_family: svie_v8_hr_357
+
+stoichiometry:
+  afr_stoich_mass: 34.3
+  target_lambda_wot: 1.05
+  target_lambda_cruise: 2.8
+  target_lambda_ultra_lean: 3.5
+  max_lambda_boost_limit: 4.0
+
+pre_ignition_mitigation:
+  strategy: boosted_intake_plus_late_compression_di
+  rationale: >
+    Optical H2 DI research shows hot-spot pre-ignition prefers low-pressure
+    intake/early-compression; ignition delay lengthens at elevated pressure.
+    Late DI + boost reduces PI if mixing remains adequate.
+  intake_boost_bar_abs_min: 1.6
+  injection_window: late_compression
+  ptwa_hotspot_control: true
+  conformal_injector_cooling: true
+  water_di_assist: true
+
+water_direct_injection:
+  enabled: true
+  max_nox_reduction_pct: 80.0
+  max_load_extension_pct: 16.0
+  # Engineering response curve: reduction ≈ max * (1 - exp(-k * water_fuel_ratio))
+  response_k: 8.0
+
+aftertreatment:
+  lean_path: [H2-SCR, urea-SCR optional]
+  stoich_path: [TWC]
+  cold_start: H2-SCR low-lightoff (~150 C class literature) + orbital water buffer CEB assist
+  mode_switch_challenge: TWC lean efficiency collapse — prefer lean+H2-SCR for HR maps
+
+nox_model:
+  # Relative index — not a certified g/kWh map
+  baseline_index_at_lambda_1: 1.0
+  lean_sensitivity_exponent: 2.2
+
+golden:
+  afr_at_lambda_1_05: 36.015
+  afr_at_lambda_2_8: 96.04
+  water_ratio_0_15_nox_reduction_pct: 55.9
+  pi_strategy: boosted_intake_plus_late_compression_di

@@ -1,0 +1,18 @@
+meta:
+  id: silk_mount
+  name: SILK-MOUNT Active Hydraulic Engine Mounts
+  version: "1.4.0"
+
+passive:
+  isolation_db_at_idle: 12.0
+
+active:
+  isolation_db_at_idle: 22.0
+  bandwidth_hz: 80
+  nexus_power_w: 45
+  sonic_trigger_index: 0.65
+
+golden:
+  isolation_gain_db: 10.0
+  isolation_db: 22.0
+  power_w: 45

@@ -1,0 +1,50 @@
+meta:
+  id: analog_hmi
+  name: SVIE Analog Luxury HMI Map
+  version: "1.3.0"
+
+gauges:
+  - speedometer_analog
+  - tachometer_analog
+  - temp_strip
+  - fuel_or_h2_strip
+
+rotaries:
+  - hvac_temp_left
+  - hvac_temp_right
+  - hvac_fan
+  - drive_mode
+
+toggles:
+  - sfv_h2_guarded
+  - axiom_map
+  - hazard
+  - defrost
+
+rollers:
+  - volume
+
+jewels:
+  - sentinel_amber
+  - oil_pressure
+  - charging_or_fuel
+
+craft:
+  dial_face: lacquered_graphite
+  rotary_material: cnc_6061_aluminum
+  knurl: diamond
+  leather_surround: true
+
+counts:
+  gauges: 4
+  rotaries: 4
+  toggles: 4
+  rollers: 1
+  jewels: 3
+
+golden:
+  gauges: 4
+  rotaries: 4
+  toggles: 4
+  physical_controls: 13
+  screens_in_stack: 0

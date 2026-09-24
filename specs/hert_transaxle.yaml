@@ -1,0 +1,101 @@
+# Hydrogen-Expanded Reactive Transaxle (HERT-12-HD)
+schema_version: "1.0"
+meta:
+  id: hert_transaxle
+  transaxle_id: HERT-12-HD
+  description: >
+    Hydrogen-Expanded Reactive Transaxle with integrated pressure-recovery
+    impulse turbine, Catalytic Exothermic Boost (CEB), and Gas-Dynamic Shift
+    Actuation (GDSA) scavenging into the SVIE intake plenum.
+
+mechanical_specifications:
+  main_gearbox_type: 6-Speed Gated Manual Dog-Clutch
+  splitter_type: 2-Speed Pneumatic Planetary
+  total_forward_ratios: 12
+  max_input_torque_nm: 850
+  casing_material: Magnesium-AZ91D
+  dry_weight_kg: 83.9
+  weight_delta_lb_vs_heavy_dct: -42
+
+comparison_vs_standard:
+  pneumatic_exergy_recovery_hp: [50, 140]
+  shift_execution_ms_standard: [20, 80]
+  shift_execution_ms_hert: [4, 6]
+  parasitic_drag_kw_standard: [12, 18]
+  parasitic_drag_kw_hert: 3
+  fuel_recovery_efficiency: 1.0
+
+expansion_turbine_stage:
+  fluid: Hydrogen (H2)
+  inlet_pressure_bar: 700.0
+  outlet_pressure_bar: 40.0
+  design_mass_flow_g_s: 28.0
+  t_in_c: 25.0
+  t_ceb_c: 650.0
+  r_h2_j_kg_k: 4124.2
+  gamma: 1.41
+  cp_kj_kg_k: 14.183
+  isentropic_efficiency_cold: 0.78
+  isentropic_efficiency_ceb: 0.75
+  baseline_power_kw: 52.23
+  baseline_power_hp: 70.0
+  ceb_boost_power_kw: 155.51
+  ceb_boost_power_hp: 208.5
+
+gdsa_actuation_system:
+  supply_pressure_bar: 40.0
+  piston_bore_mm: 20.0
+  stroke_mm: 8.0
+  peak_shift_force_n: 1256.0
+  total_shift_time_ms: 4.0
+  exhaust_routing: SVIE Intake Plenum (10 bar)
+  phases_ms:
+    piezo_pilot: [0.0, 0.5]
+    high_pressure_stroke: [0.5, 3.0]
+    mechanical_lock: [3.0, 3.5]
+    intake_scavenge: [3.5, 4.0]
+
+splitter:
+  low_ratio: 1.2273
+  high_ratio: 1.0000
+  low_teeth: [22, 27]
+  high_teeth: [25, 25]
+
+main_gears:
+  "1": {drive: 14, driven: 50, ratio: 3.5714}
+  "2": {drive: 19, driven: 45, ratio: 2.3684}
+  "3": {drive: 25, driven: 39, ratio: 1.5600}
+  "4": {drive: 31, driven: 33, ratio: 1.0645}
+  "5": {drive: 37, driven: 27, ratio: 0.7297}
+  "6": {drive: 42, driven: 22, ratio: 0.5238}
+
+final_drive:
+  pinion: 13
+  ring: 41
+  ratio: 3.1538
+
+# Master 12-speed map: R_total = R_main * R_split
+twelve_speed_map:
+  "1L": {main: 1, split: low, r_total: 4.3832, overall_with_fd: 13.823}
+  "1H": {main: 1, split: high, r_total: 3.5714, overall_with_fd: 11.263}
+  "2L": {main: 2, split: low, r_total: 2.9068, overall_with_fd: 9.167}
+  "2H": {main: 2, split: high, r_total: 2.3684, overall_with_fd: 7.469}
+  "3L": {main: 3, split: low, r_total: 1.9146, overall_with_fd: 6.038}
+  "3H": {main: 3, split: high, r_total: 1.5600, overall_with_fd: 4.920}
+  "4L": {main: 4, split: low, r_total: 1.3065, overall_with_fd: 4.120}
+  "4H": {main: 4, split: high, r_total: 1.0645, overall_with_fd: 3.357}
+  "5L": {main: 5, split: low, r_total: 0.8956, overall_with_fd: 2.825}
+  "5H": {main: 5, split: high, r_total: 0.7297, overall_with_fd: 2.301}
+  "6L": {main: 6, split: low, r_total: 0.6429, overall_with_fd: 2.028}
+  "6H": {main: 6, split: high, r_total: 0.5238, overall_with_fd: 1.652}
+
+golden:
+  cold_power_kw: 52.23
+  cold_power_hp: 70.0
+  ceb_power_kw: 155.51
+  ceb_power_hp: 208.5
+  t2s_cold_k: 129.52
+  delta_h_cold_kj_kg: 2391.6
+  shift_force_n: 1256.0
+  shift_time_ms: 4.0
+  rpm_drop_splitter: 1574

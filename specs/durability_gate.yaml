@@ -1,0 +1,29 @@
+meta:
+  id: durability_gate
+  name: SVIE Durability Gate Matrix (Design Intent)
+  version: "1.3.0"
+
+gates:
+  - id: G1_spray
+    hours: 100
+    focus: injector_hex_spray
+  - id: G2_single_cyl
+    hours: 500
+    focus: combustion_deva
+  - id: G3_mule
+    hours: 2000
+    focus: powertrain_integration
+  - id: G4_fleet
+    hours: 10000
+    focus: durability_fleet
+
+environments:
+  - cold_start_minus_30c
+  - hot_soak_50c
+  - altitude_3000m
+  - h2_leak_drill
+
+golden:
+  gates: 4
+  environments: 4
+  g3_hours: 2000

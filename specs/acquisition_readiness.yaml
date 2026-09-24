@@ -1,0 +1,60 @@
+meta:
+  id: acquisition_readiness
+  name: SVIE Acquisition Production Readiness Scorecard
+  version: "1.3.0"
+  posture: production_ready_acquisition_package
+
+# Package readiness for OEM close — NOT dyno TRL of the engine.
+# Hardware remains TRL-3; the diligence monorepo is what is production-ready.
+
+dimensions:
+  - id: reproducible_physics
+    weight: 20
+    score: 95
+    evidence: "pytest golden vectors + CLI demo"
+  - id: machine_specs
+    weight: 15
+    score: 92
+    evidence: "YAML SoT catalog + inventory"
+  - id: diligence_docs
+    weight: 15
+    score: 90
+    evidence: "Acquisition library + white paper + claim charts"
+  - id: portal_demo
+    weight: 10
+    score: 93
+    evidence: "/pitch /demo /diligence /hmi /acquisition"
+  - id: licensing_map
+    weight: 10
+    score: 94
+    evidence: "Modular packages SFV…DESIGN + COMPLIANCE + ACQUIRE"
+  - id: design_hmi
+    weight: 10
+    score: 88
+    evidence: "Vehicle design system + AETHER-OS + CarPlay Ultra guest"
+  - id: compliance_path
+    weight: 10
+    score: 78
+    evidence: "Homologation / ISO 26262 / ISO 21434 design packages"
+  - id: supply_chain
+    weight: 5
+    score: 75
+    evidence: "Tier-1 critical-path map (design intent)"
+  - id: deal_room
+    weight: 5
+    score: 96
+    evidence: "Term sheet · data room · closing checklist"
+
+gates:
+  min_weighted_score: 85
+  min_specs: 55
+  min_test_files: 14
+  min_licensing_packages: 14
+  min_portal_routes: 11
+  hardware_trl_ceiling: 3
+  package_trl_claim: "acquisition_package_production_ready"
+
+golden:
+  weighted_score_min: 85
+  dimension_count: 9
+  gates_pass: true

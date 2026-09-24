@@ -1,0 +1,60 @@
+# SVIE piezoelectric sonic flash-expansion injector
+
+meta:
+  id: piezo_injector
+  name: Piezoelectric Sonic Flash Expansion Orifice
+  version: "0.1.0"
+
+upstream_state:
+  p1_mpa: 7.0
+  t1_c: 310
+  t1_k: 583.15
+  density_kg_m3: 520
+  enthalpy_kj_kg: 850
+  speed_of_sound_m_s: 650
+
+throat_state:
+  p_sat_mpa: 3.2
+
+downstream_state:
+  p2_mpa: 1.0
+  t2_c: 165
+  density_kg_m3: 28.5
+
+flow:
+  discharge_coefficient_min: 0.62
+  discharge_coefficient_max: 0.68
+  g_crit_kg_m2_s: 8200
+  gamma_critical_pressure_ratio: 0.54
+
+pintle:
+  diameter_m: 0.0035
+  # 4500 pm/V effective stack coefficient — yields Δz=81 µm at 150 V (blueprint envelope)
+  d33_m_per_v: 4.5e-9
+  n_layers: 120
+  seat_angle_deg: 45
+  v_max: 150
+  piezo_freq_hz: 30000
+  acoustic_amplitude_m: 1.5e-5
+
+driver:
+  capacitance_f: 5.0e-8
+  v_max: 150
+  f_s_hz: 30000
+  slew_time_s: 5.0e-6
+  bus_voltage_v: 160
+  recovery_efficiency: 0.875
+
+golden:
+  pressure_ratio: 0.143
+  sigma_c: -0.579
+  delta_z_max_m: 8.1e-5
+  a_o_max_mm2: 0.630
+  a_o_required_mm2: 0.431
+  m_dot_per_injector_g_s: 3.535
+  delta_p_acoustic_mpa: 0.954
+  e_c_mj: 0.5625
+  p_raw_w: 16.88
+  p_total_8_injectors_w: 135
+  l_r_uh: 50.66
+  i_peak_a: 5.02

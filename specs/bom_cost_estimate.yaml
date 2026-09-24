@@ -1,0 +1,29 @@
+# Hybrid AM / casting BOM cost model (concept diligence — not a quote)
+
+meta:
+  id: bom_cost_estimate
+  name: SVIE-V8-HR Powertrain BOM Cost Envelope
+  version: "0.1.0"
+  currency: USD
+  volume_assumption_units_per_year: 5000
+  disclaimer: Order-of-magnitude OEM diligence envelope; not a supplier quote.
+
+line_items_usd:
+  block_sand_cast_a356: 420
+  ptwa_bore_coating: 180
+  heads_lpbf_pair: 2400
+  pistons_set: 520
+  rods_fracture_split: 380
+  crank_4340_flat_plane: 950
+  ladders_girdle: 210
+  deva_actuators_32: 3200
+  h2_di_injectors_16: 1600
+  water_di_system: 350
+  hert_turbine_gdsa: 2800
+  aftertreatment_h2_scr: 900
+  chassis_monocoque_share: 12000
+  assembly_test: 800
+
+golden:
+  powertrain_subtotal_usd: 14710
+  with_chassis_share_usd: 26710

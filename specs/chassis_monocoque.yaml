@@ -1,0 +1,89 @@
+# SVIE carbon monocoque + hybrid node chassis
+# Torsional rigidity, bending, and primary stress nodes
+
+meta:
+  id: chassis_monocoque
+  name: SVIE Carbon Monocoque Chassis with Structural Stress Nodes
+  version: "0.1.0"
+  status: concept-engineering-baseline
+
+vehicle:
+  curb_weight_kg: 1474
+  curb_weight_lb: 3250
+  wheelbase_m: 2.692
+  wheelbase_in: 106
+  track_m: 1.600
+  track_in: 63
+  weight_dist_front: 0.48
+  weight_dist_rear: 0.52
+
+axle_loads_1g_n:
+  front: 6941
+  rear: 7519
+  total: 14460
+
+venturi_downforce_n:
+  front: 534
+  rear: 1245
+  total: 1779
+  rear_cop_bias: 0.70
+
+suspension_roll_stiffness_nm_per_deg:
+  front: 1400
+  rear: 1100
+  total: 2500
+
+bump:
+  load_factor_g: 2.5
+  front_single_wheel_n: 8676
+  rear_single_wheel_n: 9399
+
+torsion:
+  coupling_multiplier_min: 12
+  k_theta_min_from_coupling_nm_per_deg: 30000
+  theta_max_deg: 0.20
+  t_twist_nm: 6940.8
+  k_theta_from_bump_nm_per_deg: 34704
+  design_target_nm_per_deg: 35000
+
+bending:
+  vertical_g: 2.0
+  f_z_total_n: 30699
+  m_b_max_nm: 10330
+
+nodes:
+  A:
+    name: Rear Diffuser / Transaxle Bulkhead
+    material: 7075-T6 billet aluminum
+    peak_stress_mpa: 245
+    limit_mpa: 503
+    stress_mode: von_mises
+    safety_factor: 2.05
+  B:
+    name: Tub / Engine Bulkhead
+    material: quasi-isotropic carbon with Al inserts
+    peak_stress_mpa: 32.5
+    limit_mpa: 65.0
+    stress_mode: interlaminar_shear
+    safety_factor: 2.00
+  C:
+    name: Center Tunnel Shear Web
+    material: carbon-Nomex sandwich (12 mm core)
+    peak_stress_mpa: 185
+    limit_mpa: 450
+    stress_mode: von_mises
+    safety_factor: 2.43
+  D:
+    name: Front Shock Towers (DKIS)
+    material: cast AlSi7Mg
+    peak_stress_mpa: 162
+    limit_mpa: 276
+    stress_mode: von_mises
+    safety_factor: 1.70
+
+golden:
+  k_theta_target_nm_per_deg: 35000
+  t_twist_nm: 6940.8
+  m_b_max_nm: 10330
+  f_z_total_n: 30699
+  min_node_sf: 1.70

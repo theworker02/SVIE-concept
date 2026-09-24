@@ -1,0 +1,44 @@
+# DEVA — Digital Electromagnetic Valve Actuation
+# Dual-solenoid camless valvetrain for SVIE (Otto / Miller / Atkinson per cycle)
+
+meta:
+  id: deva_valvetrain
+  name: Digital Electromagnetic Valve Actuation
+  version: "0.1.0"
+  status: concept-engineering-baseline
+  references:
+    - WSEAS EMVT power consumption (speed-proportional electrical demand)
+    - Hybrid PM/EM soft-landing actuators (~200–500 N class literature)
+
+architecture:
+  valves_total: 32
+  intake_per_cyl: 2
+  exhaust_per_cyl: 2
+  actuator: dual-solenoid with optional PM latch assist
+  soft_landing: iterative learning / energy-minimization control
+  failsafe: spring-closed limp with cylinder deactivation map
+
+kinematics:
+  max_lift_mm: 10.0
+  transition_time_ms_wot: 3.2
+  transition_time_ms_cruise: 5.5
+  energy_per_transition_j_wot: 3.2
+  energy_per_transition_j_cruise: 2.0
+  hold_power_w_per_valve: 8.0
+
+cycle_modes:
+  otto:
+    ivc_deg_atdc: 0
+    description: Peak power / stoichiometric or mild lean
+  miller:
+    ivc_deg_abdc: 40
+    description: Late IVC — geometric expansion > compression
+  atkinson:
+    ivc_deg_abdc: 60
+    description: Ultra-lean cruise efficiency island
+
+golden:
+  # At 8500 RPM WOT: events/s per valve = rpm/120; 32 valves active
+  power_electrical_kw_8500_wot: 7.26
+  power_electrical_kw_3000_cruise: 1.86
+  events_per_s_per_valve_8500: 70.833

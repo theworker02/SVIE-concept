@@ -1,0 +1,101 @@
+# SVIE-V8-HR — High-RPM Honda-Evolved Architecture (H2 DI)
+# Inspired by K20 / B16 high VE & RPM tolerance; sized for 10,000+ RPM on stock-class internals
+
+meta:
+  id: svie_v8_hr_357
+  name: SVIE-V8-HR High-RPM Hydrogen DI Platform
+  version: "0.1.0"
+  status: concept-engineering-baseline
+  inspiration: Honda K20 / B16 high rod-ratio & integrated girdle principles
+  fuel: direct-injection hydrogen (H2)
+  notes: >
+    Lightweight, low-cost architecture targeting 10,000+ RPM capability via
+    extreme rod-to-stroke ratio, PTWA sleeveless bores, and hybrid AM manufacturing.
+    Distinct from the 5.204 L WOT gasoline SFV baseline (svie_v8_52L).
+
+geometry:
+  cylinders: 8
+  banks: 2
+  bank_angle_deg: 90.0
+  bore_mm: 87.0
+  stroke_mm: 75.0
+  rod_length_mm: 138.0
+  rod_to_stroke: 1.840
+  displacement_cc: 3567.3
+  displacement_l: 3.57
+  cylinder_pitch_mm: 98.00
+  deck_height_mm: 202.50
+  main_journal_mm: 60.00
+  rod_journal_mm: 48.00
+  main_clearance_mm: 0.045
+  rod_clearance_mm: 0.040
+
+valvetrain_head:
+  type: DOHC 32V LPBF
+  intake_valve_mm: 36.50
+  exhaust_valve_mm: 31.00
+  intake_valves_per_cyl: 2
+  exhaust_valves_per_cyl: 2
+  intake_angle_deg: 12.5
+  exhaust_angle_deg: 11.0
+  intake_port_entrance_deg: 35.0
+  combustion_chamber: high-tumble pentroof
+  chamber_volume_cc: 38.2
+  compression_ratio: 12.5
+  hydrogen_rail_bar: 40.0
+  injection: dual sequential hydrogen DI
+  conformal_coolant_wall_clearance_mm: 1.2
+  coolant_passage_min_gap_mm: 2.0
+
+bottom_end:
+  crank: 180 flat-plane forged micro-alloy 4340
+  rods: fracture-split powdered metal forged 4600 I-beam
+  pistons: forged 2618-T6 high-silicon
+  block: A356-T6 deep-skirt
+  bore_coating: PTWA 0.15 mm iron-matrix
+  girdle: integrated 6-bolt A356-T6 ladder into oil-pan rail
+  harmonic_limit_rpm: 12000
+  target_redline_rpm: 10000
+  mean_piston_speed_at_redline_m_s: 25.0
+  side_load_reduction_pct_vs_b16_ratio: 28.0
+  ptwa_weight_save_lb: 18.0
+  rod_fatigue_hp_class: 900
+
+manufacturing:
+  block:
+    method: sand binder-jet mold + low-pressure A356-T6 cast
+    wall_structural_mm: 3.5
+    wall_high_stress_rib_mm: 6.0
+    bore_stock_extra_mm: 3.0
+    shrinkage_scale_pct: null
+  head:
+    method: LPBF / DMLS
+    material: Scalmalloy or AlSi10Mg
+    layer_um: 30
+    scalmalloy_shrinkage_scale_pct: 1.2
+    aluminum_generic_shrinkage_pct: 1.012
+  materials:
+    block: { grade: A356-T6, tensile_mpa: 310, cost: low }
+    head: { grade: Scalmalloy/AlSi10Mg, tensile_mpa: 520, cost: medium }
+    pistons: { grade: 2618-T6, tensile_mpa: 440, cost: low }
+    rods: { grade: 4600 forged PM steel, tensile_mpa: 950, cost: low }
+    crank: { grade: 4340 micro-alloy, tensile_mpa: 1100, cost: medium }
+    valves: { grade: sodium-filled Inconel 718, tensile_mpa: 1300, cost: medium }
+
+tolerances:
+  bore_mm: [0.010, 0.000]   # +0.010 / -0.000
+  stroke_mm: 0.005
+  deck_parallel_mm: 0.015
+
+b16_reference:
+  rod_to_stroke: 1.74
+  famous_rpm: 8200
+
+golden:
+  displacement_cc: 3566.8
+  displacement_cc_published: 3567.3
+  rod_to_stroke: 1.840
+  mps_10000_m_s: 25.0
+  side_load_reduction_pct: 28.0
+  ptwa_save_lb: 18.0
+  compression_ratio: 12.5
