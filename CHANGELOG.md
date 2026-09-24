@@ -2,6 +2,15 @@
 
 All notable releases of the SVIE powertrain monorepo are recorded here.
 
+## [1.3.1] — 2026-09-23
+
+### Interactive physics lab
+
+- Coupled live lab: RPM ηv map, BTE, torque/power, HEX, injector duty
+- Portal **`/lab`** — drag controls + power/torque/fuel curves (works offline on Pages)
+- `svie_physics.physics_lab` + API `/calc/lab` · `/calc/lab/sweep`
+- Calculators WOT tab live-recomputation on slider drag
+
 ## [1.3.0] — 2026-09-23
 
 ### Live demo + production-ready acquisition package

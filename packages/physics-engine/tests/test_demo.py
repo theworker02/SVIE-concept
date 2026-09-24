@@ -27,6 +27,6 @@ def test_demo_main_exit_zero(capsys):
 def test_demo_json(capsys):
     assert main(["--json"]) == 0
     out = capsys.readouterr().out
-    assert '"version": "1.3.0"' in out
+    assert '"version": "1.3.1"' in out
     assert "01-sfv-wot" in out
     assert "06-acquire" in out
