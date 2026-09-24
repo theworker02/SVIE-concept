@@ -22,7 +22,7 @@ from svie_physics.heat_exchanger import run_coupled as hex_coupled
 from svie_physics.hem_choked_flow import run_coupled as hem_coupled
 from svie_physics.io_util import load_yaml, specs_dir
 
-__version__ = "1.3.0"
+__version__ = "1.3.1"
 
 
 @dataclass

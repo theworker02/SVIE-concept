@@ -10,7 +10,7 @@ from typing import Any
 
 from svie_physics.io_util import repo_root
 
-__version__ = "1.3.0"
+__version__ = "1.3.1"
 
 PHYSICS_MODULES = [
     "air_fuel",
@@ -44,6 +44,7 @@ PHYSICS_MODULES = [
     "acquisition_suite",
     "compliance",
     "supply_chain",
+    "physics_lab",
 ]
 
 LICENSING_PACKAGES = [
@@ -187,6 +188,7 @@ def build_inventory() -> dict[str, Any]:
         "/design",
         "/hmi",
         "/acquisition",
+        "/lab",
     ]
 
     return {

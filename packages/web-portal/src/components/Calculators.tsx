@@ -106,6 +106,25 @@ export function Calculators() {
     void loadBaseline();
   }, [loadBaseline]);
 
+  // Live WOT recompute — no button required
+  useEffect(() => {
+    if (tab !== "wot") return;
+    const handle = window.setTimeout(() => {
+      void postAirFuel({
+        displacement_m3: 0.005204,
+        rpm,
+        volumetric_efficiency: etaV,
+        afr,
+        air_density_kg_m3: 1.184,
+      })
+        .then(setAirFuel)
+        .catch(() => {
+          /* keep last good / offline */
+        });
+    }, 80);
+    return () => window.clearTimeout(handle);
+  }, [tab, rpm, afr, etaV]);
+
   const tabs: { id: Tab; label: string }[] = [
     { id: "wot", label: "WOT Mass Flow" },
     { id: "hex", label: "HEX Recuperation" },
@@ -230,23 +249,7 @@ export function Calculators() {
               <div className="data-value mt-1 text-sm">{etaV.toFixed(2)}</div>
             </label>
           </div>
-          <button
-            type="button"
-            className="btn"
-            onClick={() =>
-              void postAirFuel({
-                displacement_m3: 0.005204,
-                rpm,
-                volumetric_efficiency: etaV,
-                afr,
-                air_density_kg_m3: 1.184,
-              })
-                .then(setAirFuel)
-                .catch((e) => setError(String(e)))
-            }
-          >
-            Recompute
-          </button>
+          <p className="text-xs text-[var(--steel)]">Live recompute on drag · full coupled lab at /lab</p>
           {airFuel ? (
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
               <Metric label="m_dot air" value={fmt(airFuel.m_dot_air_kg_s, 4)} unit="kg/s" />

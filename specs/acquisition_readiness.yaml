@@ -50,7 +50,7 @@ gates:
   min_specs: 55
   min_test_files: 14
   min_licensing_packages: 14
-  min_portal_routes: 11
+  min_portal_routes: 12
   hardware_trl_ceiling: 3
   package_trl_claim: "acquisition_package_production_ready"
 

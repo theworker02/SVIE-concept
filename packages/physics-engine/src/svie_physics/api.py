@@ -23,12 +23,18 @@ from svie_physics.piezo_dynamics import run_from_spec as piezo_run
 app = FastAPI(
     title="SVIE Physics API",
     description="Thin HTTP bridge over validated SVIE thermodynamic models",
-    version="1.3.0",
+    version="1.3.1",
 )
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://127.0.0.1:3000"],
+    allow_origins=[
+        "http://localhost:3000",
+        "http://127.0.0.1:3000",
+        "http://localhost:3010",
+        "http://127.0.0.1:3010",
+        "https://theworker02.github.io",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -48,7 +54,7 @@ class AirFuelRequest(BaseModel):
 
 @app.get("/health")
 def health() -> dict[str, str]:
-    return {"status": "ok", "service": "svie-physics", "version": "1.3.0"}
+    return {"status": "ok", "service": "svie-physics", "version": "1.3.1"}
 
 
 @app.get("/demo")
@@ -357,3 +363,38 @@ def calc_supply() -> dict[str, Any]:
     from svie_physics.supply_chain import run_all as supply_all
 
     return supply_all()
+
+
+class LabRequest(BaseModel):
+    rpm: float = Field(8500, ge=800, le=12000)
+    afr: float = Field(16.2, ge=10, le=40)
+    load: float = Field(1.0, ge=0.1, le=1.0)
+    temp_c: float = Field(25.0, ge=-40, le=60)
+    pressure_kpa: float = Field(101.325, ge=60, le=110)
+    boost_kpa: float = Field(0.0, ge=0, le=300)
+
+
+@app.post("/calc/lab")
+def calc_lab_point(body: LabRequest) -> dict[str, Any]:
+    from svie_physics.physics_lab import compute_point
+
+    return compute_point(
+        rpm=body.rpm,
+        afr=body.afr,
+        load=body.load,
+        temp_c=body.temp_c,
+        pressure_kpa=body.pressure_kpa,
+        boost_kpa=body.boost_kpa,
+    )
+
+
+@app.get("/calc/lab/sweep")
+def calc_lab_sweep(
+    afr: float = Query(16.2, ge=10, le=40),
+    load: float = Query(1.0, ge=0.1, le=1.0),
+    temp_c: float = Query(25.0, ge=-40, le=60),
+    points: int = Query(40, ge=5, le=80),
+) -> dict[str, Any]:
+    from svie_physics.physics_lab import run_sweep
+
+    return run_sweep(afr=afr, load=load, temp_c=temp_c, points=points)

@@ -1,7 +1,7 @@
 {
   "name": "svie-powertrain-monorepo",
   "private": true,
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "SVIE — Supercritical Vapor-Injection Engine architecture: physics models, specs, and OEM technical portal",
   "workspaces": [
     "packages/web-portal"

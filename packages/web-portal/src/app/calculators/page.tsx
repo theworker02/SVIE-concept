@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Calculators } from "@/components/Calculators";
 
 export default function CalculatorsPage() {
@@ -6,8 +7,12 @@ export default function CalculatorsPage() {
       <header>
         <h1 className="text-3xl font-semibold tracking-tight">Engineering Calculators</h1>
         <p className="mt-2 max-w-2xl text-[var(--muted)]">
-          Thin UI over the SVIE physics API. Results must match CLI outputs for
-          identical inputs.
+          Module browsers over the SVIE physics API. For the fully interactive coupled
+          lab (live sliders + power/torque curves), open{" "}
+          <Link href="/lab" className="text-[var(--amber)] underline">
+            /lab
+          </Link>
+          .
         </p>
       </header>
       <Calculators />

@@ -15,7 +15,7 @@ from svie_physics.inventory import build_inventory
 from svie_physics.manufacturing import run_manufacturing
 from svie_physics.platform_features import run_flux_shift, run_node_cast, run_ring_zero
 
-__version__ = "1.3.0"
+__version__ = "1.3.1"
 
 
 def _check(name: str, ok: bool, detail: str) -> dict[str, Any]:

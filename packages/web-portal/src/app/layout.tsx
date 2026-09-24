@@ -33,6 +33,7 @@ const nav = [
   { href: "/diligence", label: "Diligence" },
   { href: "/package", label: "Package" },
   { href: "/calculators", label: "Calculators" },
+  { href: "/lab", label: "Lab" },
   { href: "/specs", label: "Specs" },
   { href: "/architecture", label: "Architecture" },
   { href: "/design", label: "Design" },
@@ -83,7 +84,7 @@ export default function RootLayout({
         <main className="mx-auto max-w-6xl px-5 py-10">{children}</main>
         <footer className="mx-auto max-w-6xl border-t border-[var(--line)] px-5 py-8 text-sm text-[var(--muted)]">
           <p className="font-[family-name:var(--font-ibm-mono)] text-xs tracking-wider uppercase text-[var(--steel)]">
-            SVIE v1.3.0 — Production-ready acquisition package
+            SVIE v1.3.1 — Production-ready acquisition package
           </p>
           <p className="mt-2 max-w-2xl">
             Hardware TRL-3 (honest). Package close-ready. Start with /acquisition ·

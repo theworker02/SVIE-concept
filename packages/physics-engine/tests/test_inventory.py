@@ -9,7 +9,7 @@ def test_inventory_counts():
     inv = build_inventory()
     assert inv["counts"]["specs_yaml"] >= 45
     assert inv["counts"]["licensing_packages"] == 14
-    assert inv["counts"]["portal_routes"] >= 11
+    assert inv["counts"]["portal_routes"] >= 12
     assert "DESIGN" in {p["id"] for p in inv["licensing_packages"]}
     assert "COMPLIANCE" in {p["id"] for p in inv["licensing_packages"]}
     assert "ACQUIRE" in {p["id"] for p in inv["licensing_packages"]}

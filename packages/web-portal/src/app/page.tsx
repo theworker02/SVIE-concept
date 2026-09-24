@@ -23,7 +23,7 @@ export default function HomePage() {
         <div className="relative flex flex-col gap-10 md:flex-row md:items-center md:justify-between">
           <div className="max-w-2xl">
             <p className="font-[family-name:var(--font-ibm-mono)] text-sm tracking-[0.35em] text-[var(--amber)]">
-              SVIE · v1.3.0 · PRODUCTION-READY ACQUISITION
+              SVIE · v1.3.1 · PRODUCTION-READY ACQUISITION
             </p>
             <h1 className="mt-4 text-4xl font-semibold tracking-tight text-[var(--ink)] md:text-5xl">
               Supercritical Vapor-Injection Engine
@@ -34,10 +34,13 @@ export default function HomePage() {
               slideware.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/acquisition" className="btn">
+              <Link href="/lab" className="btn">
+                Physics lab
+              </Link>
+              <Link href="/acquisition" className="btn" style={{ opacity: 0.95 }}>
                 Acquisition desk
               </Link>
-              <Link href="/demo" className="btn" style={{ opacity: 0.95 }}>
+              <Link href="/demo" className="btn" style={{ opacity: 0.9 }}>
                 Live demo
               </Link>
               <Link href="/pitch" className="btn" style={{ opacity: 0.9 }}>

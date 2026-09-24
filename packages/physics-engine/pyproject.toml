@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "svie-physics"
-version = "1.3.0"
+version = "1.3.1"
 description = "SVIE thermodynamic and fluid-dynamics models for supercritical flash-vaporization powertrains"
 readme = "README.md"
 requires-python = ">=3.11"

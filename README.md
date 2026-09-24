@@ -150,9 +150,9 @@ python -m svie_physics.demo
 
 Prints locked baseline metrics with module provenance so reviewers can map each number to a pytest vector.
 
-### B. Local demo site
+### C. Interactive physics lab
 
-With API + portal running, open **[/demo](http://localhost:3000/demo)** for the guided narrative with optional live API metrics.
+Open **[/lab](http://localhost:3000/lab)** — live RPM/AFR/load/ambient/boost controls with power·torque·fuel curves. Runs client-side (GitHub Pages safe) with Python parity via `python -m svie_physics.physics_lab`.
 
 ---
 
