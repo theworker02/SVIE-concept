@@ -300,3 +300,16 @@ Semantic intent for this package:
 Proprietary — see [`LICENSE`](LICENSE). For OEM licensing or purchase process, start with [`Acquisition.md`](Acquisition.md).
 
 **SVIE** — independent advanced powertrain engineering research.
+
+## Badges & release notes
+
+| Badge | Meaning |
+| --- | --- |
+| docs live | Public documentation / Pages surface for `SVIE-concept` |
+| release v1.0.0 | Stable tagged release with narrative notes |
+| license | See repository `LICENSE` for terms |
+| status maintained | Actively kept in the @theworker02 portfolio |
+| version 1.0.0 | Documentation and brand completeness milestone |
+| pages enabled | Site intended at `https://theworker02.github.io/SVIE-concept/` |
+
+Detailed narrative for the stable line lives in [CHANGELOG.md](./CHANGELOG.md) and the [v1.0.0 GitHub Release](https://github.com/theworker02/SVIE-concept/releases/tag/v1.0.0).
